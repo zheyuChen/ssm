@@ -22,6 +22,11 @@ public class UserController {
      * @throws Exception
      */
     @ResponseBody
+    /* 了解：可以使用params和headers来更加精确的映射请求，params和headers支持简单的表达式
+    * 请求路径里可以用通配符*
+    * 用@PathVariable取路径里的参数值
+    * 用@RequestParam取get方法中的请求参数
+    * 了解：用@RequestHeader映射请求头，可以取出请求头里的信息 */
     @GetMapping("/users")
     public RestEntity<List<User>> getUsers() throws Exception {
 

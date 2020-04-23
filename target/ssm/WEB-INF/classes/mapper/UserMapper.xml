@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wymm.mapper.UserMapper">
+<mapper namespace="com.zzz.mapper.UserMapper">
     <!-- 自定义返回结果集 -->
     <resultMap id="userMap" type="User">
-        <id property="id" column="id" javaType="int"></id>
-        <result property="username" column="username" javaType="String"></result>
-        <result property="password" column="password" javaType="String"></result>
-        <result property="sex" column="sex" javaType="String"></result>
-        <result property="address" column="address" javaType="String"></result>
+        <id property="id" column="id" javaType="int"/>
+        <result property="username" column="username" javaType="String"/>
+        <result property="password" column="password" javaType="String"/>
+        <result property="sex" column="sex" javaType="String"/>
+        <result property="address" column="address" javaType="String"/>
     </resultMap>
 
     <!-- 定义 SQL 语句，其中 id 需要和接口中的方法名一致 -->

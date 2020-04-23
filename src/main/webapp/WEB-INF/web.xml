@@ -28,10 +28,26 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- 配置org.springframework.web.filter.HiddenHttpMethodFilter可以把post请求转化为delete或put请求，这也是为啥表单用post方式提交，但是后台映射请求处理的时候
+     可以区分为post delete put三种方式，统一了rest风格
+     如何发送put或delete请求：1.需要配置HiddenHttpMethodFilter 2.需要发送post请求 3.需要在发送post请求时携带一个name="_method"的隐藏域，值为delete或put
+     <input type="hidden" name="_method" value="put"/>  -->
+<!--    <filter>-->
+<!--        <filter-name>hiddenHttpMethodFilter</filter-name>-->
+<!--        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>-->
+<!--    </filter>-->
+<!--    -->
+<!--    <filter-mapping>-->
+<!--        <filter-name>hiddenHttpMethodFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+
     <!-- 配置Spring MVC -->
     <servlet>
         <servlet-name>SpringMVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 实际上也可以不通过contextConfigLocation来配置springmvc的配置文件，而使用默认的配置文件为：
+          /WEB-INF/<servlet-name>-servlet.xml 比如本项目的就为 springspringmvcmybatisintegration-servlet.xml -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring-*.xml</param-value>
