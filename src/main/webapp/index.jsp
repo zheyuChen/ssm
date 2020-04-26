@@ -11,6 +11,12 @@
     <title>index</title>
 </head>
 <body>
-<a href="/testCookieValue">testCookieValue</a>
+<a href="/testCookieValue">testCookieValue</a> <br>
+
+<a href="/testModelAndView">testModelAndView</a> <br>
+
+<a href="/testMap">testMap</a> <br>
+
+<a href="/testSeesionAttributes">testSeesionAttributes</a> <br>
 </body>
 </html>
