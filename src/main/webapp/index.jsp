@@ -18,5 +18,13 @@
 <a href="/testMap">testMap</a> <br>
 
 <a href="/testSeesionAttributes">testSeesionAttributes</a> <br>
+
+<form action="/testModelAttribute" method="post">
+    <input type="hidden" name="id" value="1"/>
+    username: <input type="text" name="username" value="Tom"/><br>
+    email: <input type="text" name="email" value="Tom@qq.com"/><br>
+    age: <input type="text" name="age" value="12"/><br>
+    <input type="submit" value="submit"/>
+</form>
 </body>
 </html>

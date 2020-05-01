@@ -5,8 +5,19 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private String sex;
-    private String address;
+    private String age;
+    private String email;
+
+    public User() {
+    }
+
+    public User(int id, String username, String password, String age, String email) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.age = age;
+        this.email = email;
+    }
 
     public int getId() {
         return id;
@@ -32,19 +43,30 @@ public class User {
         this.password = password;
     }
 
-    public String getSex() {
-        return sex;
+    public String getAge() {
+        return age;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    public String getAddress() {
-        return address;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", age='" + age + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

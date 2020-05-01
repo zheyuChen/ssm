@@ -2,19 +2,32 @@ package com.zzz.controller;
 
 import com.zzz.model.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 
-@SessionAttributes(value = {"user"}, types = {String.class})
+//@SessionAttributes(value = {"user"}, types = {String.class})
 @Controller
 public class SpringMVCTest {
+
+    /* 有@ModelAttribute标记的方法，会在每个目标方法执行之前被springmvc调用 */
+    @ModelAttribute
+    public void getUser(@RequestParam(value = "id", required = false) Integer id, Map<String, Object> map) {
+        if (id != null) {
+            User user = new User(1, "Tom", "123456", "12", "Tom@qq.com");
+            System.out.println("模拟从数据库获取user:" + user);
+            map.put("user", user);
+        }
+    }
+
+    @RequestMapping("/testModelAttribute")
+    public String testModelAttribute(User user) {
+        System.out.println("修改: " + user);
+        return "success";
+    }
 
     /* @SessionAttributes 除了可以通过属性名指定需要放到会话中的属性外（使用的是value属性值），
     * 还可以通过模型属性的对象类型指定哪些模型属性需要放到会话中（使用的是types属性值）
