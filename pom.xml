@@ -22,7 +22,7 @@
     <properties>
         <spring.version>5.0.8.RELEASE</spring.version>
         <aspectj.version>1.8.5</aspectj.version>
-        <mybatis.version>3.2.8</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <druid.version>1.0.13</druid.version>
     </properties>
 
